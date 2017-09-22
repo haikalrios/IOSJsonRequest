@@ -13,6 +13,8 @@
 		0BA436131F747E7B00B82F9A /* IOSJsonCosumer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0BA436111F747E7B00B82F9A /* IOSJsonCosumer.xcdatamodeld */; };
 		0BA436151F747E7B00B82F9A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0BA436141F747E7B00B82F9A /* Assets.xcassets */; };
 		0BA436181F747E7B00B82F9A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0BA436161F747E7B00B82F9A /* LaunchScreen.storyboard */; };
+		0BA436231F7485AF00B82F9A /* UserListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA436221F7485AF00B82F9A /* UserListTableViewController.swift */; };
+		0BA436261F74883C00B82F9A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BA436251F74883C00B82F9A /* Foundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		0BA436141F747E7B00B82F9A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0BA436171F747E7B00B82F9A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0BA436191F747E7B00B82F9A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0BA436221F7485AF00B82F9A /* UserListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListTableViewController.swift; sourceTree = "<group>"; };
+		0BA436251F74883C00B82F9A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0BA436261F74883C00B82F9A /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +47,7 @@
 			children = (
 				0BA436091F747E7800B82F9A /* IOSJsonCosumer */,
 				0BA436081F747E7800B82F9A /* Products */,
+				0BA436241F74883C00B82F9A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,15 +62,32 @@
 		0BA436091F747E7800B82F9A /* IOSJsonCosumer */ = {
 			isa = PBXGroup;
 			children = (
+				0BA436191F747E7B00B82F9A /* Info.plist */,
+				0BA436221F7485AF00B82F9A /* UserListTableViewController.swift */,
+				0BA4361F1F74845000B82F9A /* SupportingFiles */,
 				0BA4360A1F747E7900B82F9A /* AppDelegate.swift */,
 				0BA4360C1F747E7900B82F9A /* ViewController.swift */,
 				0BA4360E1F747E7A00B82F9A /* Main.storyboard */,
-				0BA436141F747E7B00B82F9A /* Assets.xcassets */,
-				0BA436161F747E7B00B82F9A /* LaunchScreen.storyboard */,
-				0BA436191F747E7B00B82F9A /* Info.plist */,
 				0BA436111F747E7B00B82F9A /* IOSJsonCosumer.xcdatamodeld */,
 			);
 			path = IOSJsonCosumer;
+			sourceTree = "<group>";
+		};
+		0BA4361F1F74845000B82F9A /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				0BA436141F747E7B00B82F9A /* Assets.xcassets */,
+				0BA436161F747E7B00B82F9A /* LaunchScreen.storyboard */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		0BA436241F74883C00B82F9A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0BA436251F74883C00B82F9A /* Foundation.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,6 +164,7 @@
 			files = (
 				0BA436131F747E7B00B82F9A /* IOSJsonCosumer.xcdatamodeld in Sources */,
 				0BA4360D1F747E7900B82F9A /* ViewController.swift in Sources */,
+				0BA436231F7485AF00B82F9A /* UserListTableViewController.swift in Sources */,
 				0BA4360B1F747E7900B82F9A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
