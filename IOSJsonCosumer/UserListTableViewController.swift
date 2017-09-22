@@ -8,28 +8,34 @@
 
 import UIKit
 
+struct User: Codable {
+    var id: Int
+    var name: String
+    var username: String
+   
+}
 
 class UserListTableViewController: UITableViewController, URLSessionDataDelegate {
     
-    var dataReceived:  Data?
+    var dataReceived =  Data()
+    var users = [User]()
     
     
     public func urlSession(_ session: URLSession, dataTask: URLSessionDataTask, didReceive data: Data){
-        dataReceived?.append(data)
+        dataReceived.append(data)
     }
     
    
     func urlSession(_ session: URLSession, task: URLSessionTask, didCompleteWithError error: Error?) {
-        //if (error != nil){
-            do {
-                let parsedData = try JSONSerialization.jsonObject(with: dataReceived!) as! [String:Any]
-                let currentConditions = parsedData["currently"] as! [String:Any]
-                print(currentConditions)
-
-            } catch let error as NSError {
-                print(error)
+        let decoder = JSONDecoder()
+        do {
+            users = try decoder.decode([User].self, from: dataReceived)
+            DispatchQueue.main.async { [unowned self] in
+                self.tableView.reloadData()
             }
-       // }
+        }catch  {
+            debugPrint(error)
+        }
     }
     
     override func viewDidLoad() {
@@ -72,25 +78,24 @@ class UserListTableViewController: UITableViewController, URLSessionDataDelegate
 
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return users.count
     }
 
-    /*
+
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
+        let cell = tableView.dequeueReusableCell(withIdentifier: "user", for: indexPath)
+        let user = users[indexPath.row]
+        cell.textLabel?.text = user.name
+        cell.detailTextLabel?.text = user.username
+    
         return cell
     }
-    */
+  
+    
 
     /*
     // Override to support conditional editing of the table view.
